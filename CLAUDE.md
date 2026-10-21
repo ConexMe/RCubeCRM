@@ -1,60 +1,56 @@
 # CLAUDE.md
 
-Twenty is an open-source CRM — an Nx / Yarn 4 monorepo. Main packages: `twenty-front` (React 18, Jotai, Linaria, Vite), `twenty-server` (NestJS, TypeORM, PostgreSQL, Redis, GraphQL), `twenty-shared` (isomorphic types/utils), `twenty-ui`, `twenty-sdk` (application SDK + CLI), `twenty-e2e-testing` (Playwright).
+O RCube CRM é um CRM de código aberto baseado no Twenty, organizado como um monorepo Nx / Yarn 4. Os principais pacotes são: `twenty-front` (React 18, Jotai, Linaria, Vite), `twenty-server` (NestJS, TypeORM, PostgreSQL, Redis, GraphQL), `twenty-shared` (tipos e utilitários isomórficos), `twenty-ui`, `twenty-sdk` (SDK de aplicativos e CLI) e `twenty-e2e-testing` (Playwright).
 
-Match the surrounding code — the adjacent files in the directory you are editing beat any written rule, including for file naming, which varies by area.
+Siga os padrões do código ao redor. Os arquivos adjacentes ao que está sendo editado têm prioridade sobre regras escritas, inclusive na nomenclatura, que varia entre áreas.
 
-## House rules
+## Convenções do projeto
 
-Where this repo differs from your defaults:
+Onde este repositório divergir dos padrões gerais:
 
-- Short-form `//` comments, never JSDoc blocks; comment only WHY (a constraint the code cannot express, still true for a reader who never saw your change), never WHAT.
-- Types over interfaces (except when extending third-party interfaces); string literals over enums (except GraphQL enums); no `any`; descriptive generics (`TData`, not `T`).
-- Named exports only. Functional components only.
-- Prefer event handlers over `useEffect` for state updates.
-- No abbreviations in names (`fieldMetadata`, not `fm`); constants in SCREAMING_SNAKE_CASE; component props types suffixed `Props`.
-- Use existing guards and helpers before writing your own: `isDefined`, `isNonEmptyArray`, `isPlainObject`, … from `twenty-shared/utils`; `isNonEmptyString`, `isString`, `isNull`, `isObject`, … from `@sniptt/guards`. Reimplementing an existing util is the most common AI-authored defect here.
-- Lingui for user-facing strings, `doNotTranslate()` from `twenty-shared/i18n` for text that must stay as written (error diagnostics, protocol tokens); Linaria (zero-runtime, styled-components pattern) for twenty-front styling.
-- For Twenty product concepts, consult `packages/twenty-ui/src/icon/icon-dictionary.md` and use the canonical icon.
-- Import icons from `twenty-ui/icon`, never directly from `@tabler/icons-react`; action and status concepts should use their action or status icons.
-- Test behavior, not implementation: query by user-visible text/roles, `@testing-library/user-event` for interactions.
+- Prefira comentários curtos com `//`, nunca blocos JSDoc. Comente apenas o motivo — uma restrição que o código não expressa e que continuará relevante para quem não viu a alteração —, nunca o que o código faz.
+- Prefira `type` a `interface` (exceto ao estender interfaces de terceiros); literais de string a enums (exceto enums GraphQL); não use `any`; use nomes descritivos para genéricos (`TData`, não `T`).
+- Use apenas exports nomeados. Componentes devem ser funções.
+- Prefira manipuladores de eventos a `useEffect` para atualizar estado.
+- Não abrevie nomes (`fieldMetadata`, não `fm`); use `SCREAMING_SNAKE_CASE` para constantes; sufixe os tipos de propriedades de componentes com `Props`.
+- Antes de criar helpers, procure os existentes: `isDefined`, `isNonEmptyArray`, `isPlainObject`, entre outros, em `twenty-shared/utils`; `isNonEmptyString`, `isString`, `isNull`, `isObject`, entre outros, em `@sniptt/guards`. Reimplementar um utilitário existente é um defeito frequente em código gerado por IA.
+- Use Lingui para textos da interface e `doNotTranslate()` de `twenty-shared/i18n` para textos que não devem ser traduzidos, como diagnósticos e tokens de protocolo. Use Linaria para estilos em `twenty-front`.
+- Para conceitos do produto RCube CRM, consulte `packages/twenty-ui/src/icon/icon-dictionary.md` e use o ícone canônico.
+- Importe ícones de `twenty-ui/icon`, nunca diretamente de `@tabler/icons-react`; conceitos de ação e status devem usar os respectivos ícones.
+- Teste o comportamento, não a implementação: consulte texto e papéis visíveis para a pessoa usuária e use `@testing-library/user-event` nas interações.
 
-## Comment sparingly
+## Comentários
 
-Most code is self-explanatory and a comment on it is just noise — cognitive overhead to read and maintenance debt to keep accurate. Only comment code that is genuinely unintuitive or complex: a non-obvious why , a workaround, a subtle invariant, a deliberate deviation from the obvious approach. Do not narrate what the code does — the code already says that. When a comment truly earns its place, keep it as terse as possible. This overrides matching the surrounding file's comment density. Write lean even in a verbose file.
+A maioria do código é autoexplicativa. Comente apenas código genuinamente complexo ou pouco intuitivo: um motivo não óbvio, uma solução alternativa, uma invariante sutil ou um desvio deliberado da abordagem esperada. Não descreva o que o código já deixa claro. Comentários devem ser concisos, com no máximo cinco linhas.
 
-Two or three lines, and a hard ceiling of five. "Terse" is not relative: much of this repo predates the rule and carries paragraph-length comments, so a file you are editing is not evidence of the standard — it is usually the thing the rule exists to stop spreading. If the why will not fit in five lines, the explanation belongs in a module docstring, a README or an ADR, and the comment is one line pointing there.
+Docstrings explicam o que o código faz e suas decisões de projeto. Também devem ser concisas; use-as quando a explicação for extensa demais para um comentário breve.
 
-The same ceiling applies to a comment's neighbours: do not restate one fact in the Dockerfile, the manifest and the code that reads it. Put it once, where a reader hits it first, and let the others be silent.
-
-Docstrings carry the what and the design; they are not exempt from terseness, but they are the right home for anything a comment is too small to hold.
-
-## Commands
+## Comandos
 
 ```bash
-bash packages/twenty-utils/setup-dev-env.sh   # Postgres/Redis + DB init; only for tasks needing a running app
+bash packages/twenty-utils/setup-dev-env.sh   # Postgres/Redis + inicialização do banco; apenas para tarefas que precisam executar o aplicativo
 yarn start                                    # front + server + worker
 
-npx jest path/to/file.spec.ts --config=packages/<pkg>/jest.config.mjs   # single test file (preferred)
-npx vitest run --root packages/twenty-ui --project unit <file>          # twenty-ui runs on vitest, not jest
-npx nx test twenty-server                     # package unit tests (same for twenty-front, ...)
+npx jest caminho/para/arquivo.spec.ts --config=packages/<pacote>/jest.config.mjs   # teste unitário de um arquivo (preferencial)
+npx vitest run --root packages/twenty-ui --project unit <arquivo>                  # twenty-ui usa Vitest, não Jest
+npx nx test twenty-server                     # testes do pacote (também disponível para twenty-front etc.)
 npx nx run twenty-server:test:integration:with-db-reset
 npx nx storybook:build twenty-front && npx nx storybook:test twenty-front
 
-npx nx lint:diff-with-main twenty-server      # diff-based lint (fast; add --configuration=fix); run with typecheck after changes
-npx nx fmt <pkg>                              # format
-npx nx build twenty-shared                    # required before building/testing packages that depend on it
+npx nx lint:diff-with-main twenty-server      # lint rápido das diferenças; adicione --configuration=fix para corrigir
+npx nx fmt <pacote>                           # formatação
+npx nx build twenty-shared                    # necessário antes de compilar/testar pacotes dependentes
 npx nx database:reset twenty-server
-npx nx run twenty-front:graphql:generate      # after GraphQL schema changes (--configuration=metadata for metadata schema)
+npx nx run twenty-front:graphql:generate      # após alterações no schema GraphQL; use --configuration=metadata para o schema de metadados
 ```
 
-## Gotchas
+## Pontos de atenção
 
-- **`twenty-shared/dist` is per-branch state nothing tracks.** After switching branches or editing `twenty-shared`, run `npx nx build twenty-shared --skip-nx-cache` before trusting any typecheck or test failure in a dependent package.
-- **Nx caching can serve a stale pass.** To verify a fix, run `npx tsgo -p tsconfig.json --noEmit` in the package directly rather than `nx typecheck`.
-- **Do not commit translation catalogs unless translations are the task.** `lingui extract`/`compile` regenerate `packages/twenty-server/src/engine/core-modules/i18n/locales/*.po` and `locales/generated/*` with thousands of lines of churn as a side effect of touching any `msg` string. The i18n pipeline maintains them; leave them out of your commit.
-- **Commit messages must not carry AI attribution.** CI rejects commits containing `@anthropic.com` co-author trailers or "Generated with Claude Code" lines.
-- **Upgrade commands** (`packages/twenty-server/src/database/commands/upgrade-version-command/`): add or edit files only under the current `TWENTY_CURRENT_VERSION` directory, with a real epoch-ms timestamp strictly greater than every existing one in that directory — CI enforces both, and the upgrade cursor silently skips a command that sorts before an already-applied one. Include `up` and `down`; never rewrite committed command logic. Keep command-only helpers and constants in the version folder, never in runtime modules, and never make runtime code branch on migration state. See `packages/twenty-server/docs/UPGRADE_COMMANDS.md`.
-- **Entity file changes need a generated instance command**: `npx nx run twenty-server:database:migrate:generate --name <name> --type <fast|slow>` (slow = adds a data-backfill step).
-- A read-only Postgres MCP server is configured in `.mcp.json` for inspecting workspace data, metadata, and migration results. Writes go through the CLI commands above.
-- E2E login: click "Continue with Email" and use the prefilled credentials.
+- **`twenty-shared/dist` é um artefato local por branch e não é versionado.** Após trocar de branch ou editar `twenty-shared`, execute `npx nx build twenty-shared --skip-nx-cache` antes de confiar em falhas de tipos ou testes de pacotes dependentes.
+- **O cache do Nx pode retornar resultados desatualizados.** Para verificar uma correção, execute `npx tsgo -p tsconfig.json --noEmit` diretamente no pacote, em vez de `nx typecheck`.
+- **Não versione catálogos de tradução, a menos que a tarefa seja sobre eles.** `lingui extract` e `lingui compile` regeneram `packages/twenty-server/src/engine/core-modules/i18n/locales/*.po` e `locales/generated/*` com milhares de linhas de alterações ao tocar em qualquer string `msg`. O pipeline de i18n mantém esses arquivos; não os inclua.
+- **Mensagens de commit não devem atribuir autoria a IA.** A CI rejeita commits com trailers de coautoria `@anthropic.com` ou linhas como "Generated with Claude Code".
+- **Comandos de atualização** (`packages/twenty-server/src/database/commands/upgrade-version-command/`): crie ou edite arquivos apenas no diretório da versão atual `TWENTY_CURRENT_VERSION`, usando um timestamp real em milissegundos desde o epoch, maior que todos os existentes nesse diretório. A CI valida isso, e o cursor de atualização ignora silenciosamente comandos ordenados antes de um já aplicado. Inclua `up` e `down`; nunca reescreva a lógica de comandos já versionados. Mantenha helpers e constantes exclusivos dos comandos na pasta da versão, nunca em módulos de runtime, e não condicione o código de runtime ao estado da migração. Consulte `packages/twenty-server/docs/UPGRADE_COMMANDS.md`.
+- **Alterações em arquivos de entidades precisam de um comando de instância gerado**: `npx nx run twenty-server:database:migrate:generate --name <nome> --type <fast|slow>` (`slow` adiciona uma etapa de atualização de dados).
+- Há um servidor MCP Postgres somente leitura configurado em `.mcp.json` para consultar dados do workspace, metadados e resultados de migrações. Escritas devem ser feitas pelos comandos da CLI.
+- Para entrar no ambiente E2E, clique em "Continue with Email" e use as credenciais já preenchidas.

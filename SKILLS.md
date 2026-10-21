@@ -1,40 +1,40 @@
-# Agent Skills in this repository
+# Agent Skills neste repositório
 
-This repository contains several families of Agent Skills. They have different audiences, so pick the one that matches what you are doing. Only the first family is meant to be installed by people building on Twenty.
+Este repositório reúne diferentes famílias de Agent Skills, cada uma voltada a um público. Apenas a primeira família deve ser instalada por quem desenvolve aplicativos para o RCube CRM e para o projeto-base Twenty.
 
-## Building a Twenty app — install these
+## Desenvolver um aplicativo Twenty
 
-[`packages/twenty-agent-skills`](./packages/twenty-agent-skills) is the official, harness-agnostic collection for creating, developing, operating, and publishing Twenty apps. It works in Claude Code, Codex, Cursor, Pi, and any other harness supported by the `skills` CLI, against any Twenty instance including self-hosted and localhost.
+[`packages/twenty-agent-skills`](./packages/twenty-agent-skills) é a coleção oficial, independente de ambiente, para criar, desenvolver, operar e publicar aplicativos Twenty. Funciona com Claude Code, Codex, Cursor, Pi e outros ambientes compatíveis com a CLI `skills`, conectados a qualquer instância Twenty, incluindo instâncias auto-hospedadas e locais.
 
 ```bash
 npx skills add https://github.com/twentyhq/twenty/tree/agent-skills --list
 npx skills add https://github.com/twentyhq/twenty/tree/agent-skills --skill create-app
 ```
 
-Install from the `agent-skills` branch, which contains only the built app skills and Codex plugin. The source package on `main` keeps references shared and must be built before installation. The branch becomes available after the first successful publish from `main`; until then, use the [local build instructions](./packages/twenty-agent-skills#local-development).
+Instale a partir da branch `agent-skills`, que contém apenas as skills compiladas para aplicativos e o plugin do Codex. O pacote-fonte em `main` mantém referências compartilhadas e precisa ser compilado antes da instalação. A branch estará disponível após a primeira publicação bem-sucedida a partir de `main`; até lá, use as [instruções de desenvolvimento local](./packages/twenty-agent-skills#local-development).
 
-| Skill            | Use it for                                                                            |
-| ---------------- | ------------------------------------------------------------------------------------- |
-| `create-app`     | Scaffold a new Twenty app.                                                            |
-| `develop-app`    | Add or modify objects, fields, logic functions, layouts, front components, workflows. |
-| `manage-app`     | Remotes, sync, build, deploy, logs, troubleshooting, CI/CD.                           |
-| `publish-app`    | README, marketplace metadata, logos, screenshots, public assets.                      |
-| `use-twenty-mcp` | Optional: connect an agent to a workspace over MCP and present records readably.      |
+| Skill            | Quando usar                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| `create-app`     | Iniciar a estrutura de um aplicativo Twenty.                                         |
+| `develop-app`    | Adicionar ou modificar objetos, campos, funções de lógica, layouts, componentes e fluxos de trabalho. |
+| `manage-app`     | Configurar remotes, sincronizar, compilar, implantar, consultar logs, solucionar problemas e CI/CD. |
+| `publish-app`    | Preparar README, metadados do marketplace, logos, capturas de tela e assets públicos. |
+| `use-twenty-mcp` | Opcional: conectar um agente a um workspace por MCP e apresentar registros de forma legível. |
 
-## Working inside a Twenty workspace
+## Trabalhar em um workspace Twenty
 
-[`packages/twenty-claude-skills`](./packages/twenty-claude-skills) holds skills for using a Twenty workspace rather than building on it, such as presenting CRM records as readable summaries.
+[`packages/twenty-claude-skills`](./packages/twenty-claude-skills) reúne skills para usar um workspace Twenty, em vez de desenvolver nele — por exemplo, para apresentar registros do CRM como resumos legíveis.
 
-## Contributing to Twenty itself
+## Contribuir com o código do RCube CRM
 
-[`.claude/skills`](./.claude/skills) holds the skills for agents and contributors working in this checkout: `qa-scout` for browser QA of a pull request, and the `syncable-entity-*` series covering Twenty's own workspace migration system. They assume a checkout of this repository and are not useful for app development, which the `syncable-entity-*` descriptions state in their first sentence.
+[`.claude/skills`](./.claude/skills) contém skills para agentes e pessoas que contribuem com este repositório: `qa-scout`, para testes de interface no navegador, e a série `syncable-entity-*`, voltada ao sistema de migração de workspaces herdado do Twenty. Essas skills pressupõem um clone deste repositório e não são voltadas ao desenvolvimento de aplicativos; as descrições de `syncable-entity-*` deixam isso explícito.
 
-These are what a bare-repository listing (`npx skills add twentyhq/twenty --list`) returns. Use the `agent-skills` branch above for app development.
+Essas são as skills listadas ao executar `npx skills add twentyhq/twenty --list` no repositório. Para desenvolver aplicativos, use a branch `agent-skills` indicada acima.
 
-## Shipped inside apps
+## Skills distribuídas com aplicativos
 
-`packages/twenty-apps/**/src/skills` holds skills that a specific Twenty app ships to its users. They are part of that app, not of this collection.
+`packages/twenty-apps/**/src/skills` contém skills distribuídas por aplicativos específicos do Twenty. Elas pertencem a esses aplicativos, não a esta coleção.
 
-## Codex plugin
+## Plugin do Codex
 
-[`packages/twenty-agent-skills`](./packages/twenty-agent-skills) owns both the canonical skills and the Codex metadata. Its build produces one distribution, published at the root of the `agent-skills` branch, for the `skills` CLI and the Codex plugin named `twenty`. Generated copies are not committed to `main`.
+[`packages/twenty-agent-skills`](./packages/twenty-agent-skills) mantém as skills canônicas e os metadados do Codex. A compilação gera uma única distribuição, publicada na raiz da branch `agent-skills`, para a CLI `skills` e para o plugin do Codex chamado `twenty`. As cópias geradas não são versionadas em `main`.
