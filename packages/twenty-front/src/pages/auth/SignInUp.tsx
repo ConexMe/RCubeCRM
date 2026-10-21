@@ -50,7 +50,7 @@ const StyledLoaderContainer = styled.div`
 `;
 
 const StyledBackground = styled.div`
-  background: ${themeCssVariables.background.secondary};
+  background: #0f1729;
   display: flex;
   flex-direction: column;
   height: calc(100dvh / var(--t-zoom, 1));
@@ -122,7 +122,7 @@ export const SignInUp = () => {
     }
 
     if (isGlobalScope) {
-      return t`Welcome to Twenty`;
+      return t`Welcome to RCube CRM`;
     }
 
     const workspaceName = workspacePublicData?.displayName;
@@ -217,7 +217,7 @@ export const SignInUp = () => {
       <StyledOnboardingStepPage>{signInUpForm}</StyledOnboardingStepPage>
     </OnboardingLayout>
   ) : (
-    <StyledBackground>
+    <StyledBackground className="dark">
       {signInUpStep === SignInUpStep.EmailVerification ? (
         <StyledAuthContent>
           <EmailVerificationSent email={searchParams.get('email')} />

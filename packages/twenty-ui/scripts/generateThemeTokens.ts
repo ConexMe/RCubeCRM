@@ -101,10 +101,18 @@ const writeAndFormatOutputs = () => {
 
   // oxfmt reformats CSS as well as TypeScript, so the committed artifacts are
   // its output rather than the builders'.
-  const formatResult = spawnSync('npx', ['oxfmt', ...outputPaths], {
-    cwd: packageRoot,
-    stdio: 'inherit',
-  });
+  const oxfmtExecutable = resolve(
+    packageRoot,
+    '../../node_modules/oxfmt/bin/oxfmt',
+  );
+  const formatResult = spawnSync(
+    process.execPath,
+    [oxfmtExecutable, ...outputPaths],
+    {
+      cwd: packageRoot,
+      stdio: 'inherit',
+    },
+  );
   if (formatResult.status !== 0) {
     throw new Error('oxfmt failed on the generated theme files');
   }

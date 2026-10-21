@@ -8,7 +8,9 @@ const NON_RELATIVE_IMPORT_PATTERN = /^[^./]/;
 const SOURCE_ALIAS_IMPORT_PREFIX = '@/';
 const VIRTUAL_MODULE_IMPORT_PATTERN = /^__[a-z_]+__$/;
 
-const keepVirtualModuleImportsPlugin: esbuild.Plugin = {
+const createKeepVirtualModuleImportsPlugin = (
+  entryDirectory: string,
+): esbuild.Plugin => ({
   name: 'keep-virtual-module-imports',
   setup: (build) => {
     build.onResolve(
@@ -22,6 +24,21 @@ const keepVirtualModuleImportsPlugin: esbuild.Plugin = {
           return { path: importPath, external: true };
         }
 
+        if (path.isAbsolute(importPath)) {
+          const relativeImportPath = path.relative(
+            entryDirectory,
+            importPath,
+          );
+
+          if (
+            relativeImportPath !== '..' &&
+            !relativeImportPath.startsWith(`..${path.sep}`) &&
+            !path.isAbsolute(relativeImportPath)
+          ) {
+            return undefined;
+          }
+        }
+
         return {
           errors: [
             {
@@ -32,7 +49,7 @@ const keepVirtualModuleImportsPlugin: esbuild.Plugin = {
       },
     );
   },
-};
+});
 
 export const createBundledSourcePlugin = (): Plugin => ({
   name: 'bundled-source',
@@ -53,7 +70,7 @@ export const createBundledSourcePlugin = (): Plugin => ({
           metafile: true,
           write: false,
           logLevel: 'silent',
-          plugins: [keepVirtualModuleImportsPlugin],
+          plugins: [createKeepVirtualModuleImportsPlugin(entryDirectory)],
         })
         .catch((buildFailure: esbuild.BuildFailure) => {
           for (const { location } of buildFailure.errors ?? []) {

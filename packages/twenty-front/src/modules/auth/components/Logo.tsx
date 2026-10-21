@@ -24,6 +24,21 @@ const StyledContainer = styled.div`
 
   position: relative;
   width: ${themeCssVariables.spacing[12]};
+
+  &.brand {
+    height: ${themeCssVariables.spacing[18]};
+  }
+`;
+
+const StyledBrandName = styled.div`
+  bottom: 0;
+  color: ${themeCssVariables.font.color.primary};
+  font-size: ${themeCssVariables.font.size.sm};
+  font-weight: ${themeCssVariables.font.weight.semiBold};
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
 `;
 
 const StyledSecondaryLogo = styled.img`
@@ -44,6 +59,10 @@ const StyledSecondaryLogoContainer = styled.div`
   position: absolute;
   right: calc(-1 * ${themeCssVariables.spacing[3]});
   width: ${themeCssVariables.spacing[7]};
+
+  &.brand {
+    bottom: ${themeCssVariables.spacing[6]};
+  }
 `;
 
 const StyledPrimaryLogo = styled.div`
@@ -60,7 +79,7 @@ export const Logo = ({
   to = AppPath.SignInUp,
 }: LogoProps) => {
   const { redirectToDefaultDomain } = useRedirectToDefaultDomain();
-  const defaultPrimaryLogoUrl = `${window.location.origin}/images/icons/android/android-launchericon-192-192.png`;
+  const defaultPrimaryLogoUrl = `${window.location.origin}/images/rcube/rcube-mark.png`;
 
   const primaryLogoUrl = getImageAbsoluteURI({
     imageUrl: primaryLogo ?? defaultPrimaryLogoUrl,
@@ -77,7 +96,10 @@ export const Logo = ({
   const isUsingDefaultLogo = !isDefined(primaryLogo);
 
   return (
-    <StyledContainer onClick={() => onClick?.()}>
+    <StyledContainer
+      className={isUsingDefaultLogo ? 'brand' : undefined}
+      onClick={() => onClick?.()}
+    >
       {isUsingDefaultLogo ? (
         <UndecoratedLink to={to} onClick={() => redirectToDefaultDomain()}>
           <StyledPrimaryLogo
@@ -90,12 +112,16 @@ export const Logo = ({
         />
       )}
       {isDefined(secondaryLogoUrl) ? (
-        <StyledSecondaryLogoContainer>
+        <StyledSecondaryLogoContainer
+          className={isUsingDefaultLogo ? 'brand' : undefined}
+        >
           <StyledSecondaryLogo src={secondaryLogoUrl} />
         </StyledSecondaryLogoContainer>
       ) : (
         isDefined(placeholder) && (
-          <StyledSecondaryLogoContainer>
+          <StyledSecondaryLogoContainer
+            className={isUsingDefaultLogo ? 'brand' : undefined}
+          >
             <Avatar
               size="lg"
               name={placeholder}
@@ -105,6 +131,7 @@ export const Logo = ({
           </StyledSecondaryLogoContainer>
         )
       )}
+      {isUsingDefaultLogo && <StyledBrandName>RCube CRM</StyledBrandName>}
     </StyledContainer>
   );
 };

@@ -15,7 +15,11 @@ export const PageTitle = (props: PageTitleProps) => {
 
   return (
     <Helmet>
-      <title>{props.title}</title>
+      <title>
+        {props.title.includes('RCube CRM')
+          ? props.title
+          : `${props.title} | RCube CRM`}
+      </title>
     </Helmet>
   );
 };
