@@ -1,0 +1,13 @@
+(!) Failed to run dependency scan. Skipping dependency pre-bundling. Error: The following dependencies are imported but could not be resolved:
+
+  twenty-front-component-renderer (imported by C:/Users/rodri/OneDrive/Documentos/RCubeCRM/packages/twenty-front/src/modules/front-components/hooks/useFrontComponentExecutionContext.ts)
+
+Are they installed?
+    at file:///C:/Users/rodri/OneDrive/Documentos/RCubeCRM/node_modules/vite/dist/node/chunks/node.js:31628:33
+    at async file:///C:/Users/rodri/OneDrive/Documentos/RCubeCRM/node_modules/vite/dist/node/chunks/node.js:23353:15
+15:22:36 [vite] (client) [console.warn] No `HydrateFallback` element provided to render during initial hydration
+15:26:25 [vite] (client) [console.warn] No `HydrateFallback` element provided to render during initial hydration
+15:36:10 [vite] (client) [console.warn] No `HydrateFallback` element provided to render during initial hydration
+15:38:10 [vite] (client) [console.warn] No `HydrateFallback` element provided to render during initial hydration
+15:49:38 [vite] (client) [console.warn] No `HydrateFallback` element provided to render during initial hydration
+15:54:02 [vite] (client) [console.warn] No `HydrateFallback` element provided to render during initial hydration

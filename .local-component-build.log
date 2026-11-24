@@ -1,0 +1,32 @@
+
+ NX   Running target build for project twenty-front-component-renderer and 9 tasks it depends on:
+
+
+
+> nx run twenty-ui:build
+
+(node:13248) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:27320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> nx run twenty-ui:"build:individual"
+
+> npx vite build -c vite.config.individual.ts
+
+(node:6532) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:25868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[33m[PLUGIN_TIMINGS] [0mYour build spent significant time in plugins. Here is a breakdown:
+  - vite:esbuild-transpile (51%)
+  - vite-plugin-svgr (15%)
+  - vite:css (11%)
+  - vite:build-import-analysis (8%)
+  - vite:css-post (7%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+

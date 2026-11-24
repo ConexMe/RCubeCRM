@@ -1,0 +1,305 @@
+[Nest] 5316  - 24/11/2026, 15:23:30   ERROR [DatabaseConfigDriver] Failed to refresh config variables from database
+Error: Failed to load all config variables: Query read timeout
+    at ConfigStorageService.loadAll (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\twenty-config\storage\config-storage.service.js:150:19)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processTimers (node:internal/timers:538:9)
+    at async DatabaseConfigDriver.refreshAllCache (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\twenty-config\drivers\database-config.driver.js:80:30)
+    at async CronJob.<anonymous> (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\@nestjs\schedule\dist\schedule.explorer.js:124:17)
+[Nest] 5316  - 24/11/2026, 15:40:45   ERROR [ExceptionsHandler] Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+    at async open (node:internal/fs/promises:637:25)
+    at async readFile (node:internal/fs/promises:1269:14)
+    at async Promise.all (index 0)
+    at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+    at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+    at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+    at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+    at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+    at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json'
+}
+  [
+    Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+        at async open (node:internal/fs/promises:637:25)
+        at async readFile (node:internal/fs/promises:1269:14)
+        at async Promise.all (index 0)
+        at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+        at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+        at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+        at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+        at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+        at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+      errno: -4058,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json',
+      extensions: {}
+    }
+  ]
+[Nest] 5316  - 24/11/2026, 15:41:19   ERROR [ExceptionsHandler] Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\yarn.lock'
+    at async open (node:internal/fs/promises:637:25)
+    at async readFile (node:internal/fs/promises:1269:14)
+    at async Promise.all (index 1)
+    at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+    at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+    at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+    at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+    at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+    at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\yarn.lock'
+}
+  [
+    Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\yarn.lock'
+        at async open (node:internal/fs/promises:637:25)
+        at async readFile (node:internal/fs/promises:1269:14)
+        at async Promise.all (index 1)
+        at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+        at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+        at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+        at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+        at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+        at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+      errno: -4058,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\yarn.lock',
+      extensions: {}
+    }
+  ]
+[Nest] 5316  - 24/11/2026, 15:50:01   ERROR [ExceptionsHandler] Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+    at async open (node:internal/fs/promises:637:25)
+    at async readFile (node:internal/fs/promises:1269:14)
+    at async Promise.all (index 0)
+    at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+    at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+    at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+    at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+    at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+    at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json'
+}
+  [
+    Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+        at async open (node:internal/fs/promises:637:25)
+        at async readFile (node:internal/fs/promises:1269:14)
+        at async Promise.all (index 0)
+        at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+        at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+        at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+        at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+        at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+        at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+      errno: -4058,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json',
+      extensions: {}
+    }
+  ]
+[Nest] 5316  - 24/11/2026, 15:50:15   ERROR [ExceptionsHandler] Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\yarn.lock'
+    at async open (node:internal/fs/promises:637:25)
+    at async readFile (node:internal/fs/promises:1269:14)
+    at async Promise.all (index 1)
+    at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+    at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+    at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+    at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+    at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+    at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\yarn.lock'
+}
+  [
+    Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\yarn.lock'
+        at async open (node:internal/fs/promises:637:25)
+        at async readFile (node:internal/fs/promises:1269:14)
+        at async Promise.all (index 1)
+        at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+        at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+        at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+        at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+        at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+        at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+      errno: -4058,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\yarn.lock',
+      extensions: {}
+    }
+  ]
+[Nest] 5316  - 24/11/2026, 15:53:26   ERROR [ExceptionsHandler] Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+    at async open (node:internal/fs/promises:637:25)
+    at async readFile (node:internal/fs/promises:1269:14)
+    at async Promise.all (index 0)
+    at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+    at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+    at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+    at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+    at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+    at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json'
+}
+  [
+    Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+        at async open (node:internal/fs/promises:637:25)
+        at async readFile (node:internal/fs/promises:1269:14)
+        at async Promise.all (index 0)
+        at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+        at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+        at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+        at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+        at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+        at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+      errno: -4058,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json',
+      extensions: {}
+    }
+  ]
+[Nest] 5316  - 24/11/2026, 15:54:08   ERROR [ExceptionsHandler] Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+    at async open (node:internal/fs/promises:637:25)
+    at async readFile (node:internal/fs/promises:1269:14)
+    at async Promise.all (index 0)
+    at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+    at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+    at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+    at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+    at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+    at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json'
+}
+  [
+    Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+        at async open (node:internal/fs/promises:637:25)
+        at async readFile (node:internal/fs/promises:1269:14)
+        at async Promise.all (index 0)
+        at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+        at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+        at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+        at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+        at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+        at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+      errno: -4058,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json',
+      extensions: {}
+    }
+  ]
+[Nest] 5316  - 24/11/2026, 15:54:16   ERROR [ExceptionsHandler] Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+    at async open (node:internal/fs/promises:637:25)
+    at async readFile (node:internal/fs/promises:1269:14)
+    at async Promise.all (index 0)
+    at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+    at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+    at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+    at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+    at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+    at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json'
+}
+  [
+    Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+        at async open (node:internal/fs/promises:637:25)
+        at async readFile (node:internal/fs/promises:1269:14)
+        at async Promise.all (index 0)
+        at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+        at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+        at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+        at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+        at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+        at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+      errno: -4058,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json',
+      extensions: {}
+    }
+  ]
+[Nest] 5316  - 24/11/2026, 15:54:30   ERROR [ExceptionsHandler] Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+    at async open (node:internal/fs/promises:637:25)
+    at async readFile (node:internal/fs/promises:1269:14)
+    at async Promise.all (index 0)
+    at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+    at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+    at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+    at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+    at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+    at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json'
+}
+  [
+    Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+        at async open (node:internal/fs/promises:637:25)
+        at async readFile (node:internal/fs/promises:1269:14)
+        at async Promise.all (index 0)
+        at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+        at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+        at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+        at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+        at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+        at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+      errno: -4058,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json',
+      extensions: {}
+    }
+  ]
+[Nest] 5316  - 24/11/2026, 15:54:57   ERROR [ExceptionsHandler] Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+    at async open (node:internal/fs/promises:637:25)
+    at async readFile (node:internal/fs/promises:1269:14)
+    at async Promise.all (index 0)
+    at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+    at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+    at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+    at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+    at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+    at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json'
+}
+  [
+    Error: ENOENT: no such file or directory, open 'C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\constants\seed-dependencies\package.json'
+        at async open (node:internal/fs/promises:637:25)
+        at async readFile (node:internal/fs/promises:1269:14)
+        at async Promise.all (index 0)
+        at async getDefaultApplicationPackageFields (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application-package\utils\get-default-application-package-fields.util.js:26:51)
+        at async ApplicationService.createWorkspaceCustomApplication (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\application\application.service.js:314:38)
+        at async C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:455:43
+        at async EntityManager.transaction (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\node_modules\typeorm\entity-manager\EntityManager.js:75:28)
+        at async SignInUpService.signUpOnNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\services\sign-in-up.service.js:442:79)
+        at async AuthResolver.signUpInNewWorkspace (C:\Users\rodri\OneDrive\Documentos\RCubeCRM\packages\twenty-server\dist\engine\core-modules\auth\auth.resolver.js:382:37) {
+      errno: -4058,
+      code: 'ENOENT',
+      syscall: 'open',
+      path: 'C:\\Users\\rodri\\OneDrive\\Documentos\\RCubeCRM\\packages\\twenty-server\\dist\\engine\\core-modules\\application\\application-package\\constants\\seed-dependencies\\package.json',
+      extensions: {}
+    }
+  ]
